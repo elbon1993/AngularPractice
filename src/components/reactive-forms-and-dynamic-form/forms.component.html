@@ -1,0 +1,28 @@
+ <div>
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <label for="userid">User ID</label><input id="userid" type="text" formControlName="userid" /> <br />
+        <label for="username">User name</label><input id="username" type="text" formControlName="username" /> <br />
+        <label for="email">Email</label><input id="email" type="text" formControlName="email" /> 
+            <span style="color: red" *ngIf="userForm.controls['email'].hasError('email') && userForm.controls['email'].touched">Enter valid email id</span> 
+            <span style="color: red" *ngIf="userForm.controls['email'].hasError('required') && userForm.controls['email'].touched">Email is required</span> 
+        <br />
+        <div formGroupName="address">
+            <h3>Address</h3>
+            <label for="street">Street</label><input id="street" type="text" formControlName="street" /> <br />
+            <label for="city">City</label><input id="city" type="text" formControlName="city" /> <br />
+            <label for="state">State</label><input id="state" type="text" formControlName="state" /> <br />
+            <label for="zipcode">Zipcode</label><input id="zipcode" type="text" formControlName="zipcode" /> <br />
+        </div>
+        <div formArrayName="aliases">
+            <h3>Aliases</h3>
+            <button type="button" (click)="addAliases()">+Add Alias</button>
+            <div *ngFor="let alias of aliases.controls; let i=index">
+                <label for="alias_{{i}}"></label><input id="alias_{{i}}" type="text" [formControlName]="i"/>
+            </div>
+        </div>
+        
+
+        <button type="submit" [disabled]="!userForm.valid">Submit</button>
+        <button type="reset" (onReset)="onReset()">Reset</button>
+    </form>
+</div>

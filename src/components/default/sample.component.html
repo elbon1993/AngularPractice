@@ -1,0 +1,21 @@
+<div>
+    <p><a routerLink="product-list">Products</a></p>
+    <p><a routerLink="login">Login</a></p>
+    <p><a routerLink="forms">Forms</a></p>
+    <H2>Title: {{title}}</H2>
+    <button (click)="changeColor()">Change Color</button>
+    <p [style.color]="color">Text color</p>
+    <div *ngIf="color=='red'; else blueContent">
+      The content is in RED Color
+    </div>
+    <ng-template #blueContent>
+      The content is in BLUE Color
+    </ng-template>
+    <h3>Employees:</h3>
+    <ul>
+      <li *ngFor="let emp of empList">
+        {{emp}}
+      </li>
+    </ul>
+   <parent-comp></parent-comp> 
+  </div>
