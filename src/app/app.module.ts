@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserForm } from 'src/components/reactive-forms-and-dynamic-form/forms.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AppHighlightDirective } from 'src/directives/app-highlight.directive';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     ProductListComponent,
     SampleComponent,
     LoginComponent,
-    UserForm
+    UserForm,
+    AppHighlightDirective
   ],
   imports: [
     BrowserModule,

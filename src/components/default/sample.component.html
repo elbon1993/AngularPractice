@@ -17,5 +17,9 @@
         {{emp}}
       </li>
     </ul>
-   <parent-comp></parent-comp> 
+   <parent-comp></parent-comp> <br/><br/>
+   <input type="radio" name="colors" (click)="bgColor='red'">Red
+   <input type="radio" name="colors" (click)="bgColor='green'">Green
+   <input type="radio" name="colors" (click)="bgColor='blue'">Blue
+   <p [appHighlight]="bgColor" defaultColor="purple">Highlight Me</p>
   </div>

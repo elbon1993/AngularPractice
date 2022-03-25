@@ -7,6 +7,7 @@ import { Component } from "@angular/core";
 export class SampleComponent {
     title = 'angular-practice';
     color = 'red';
+    bgColor = '';
     empList = [
       "Chandu",
       "Varam",
