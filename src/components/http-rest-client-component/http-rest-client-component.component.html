@@ -1,0 +1,39 @@
+<p>http-rest-client-component works!</p>
+<button (click)="createUser()">Create user</button>
+<button (click)="getUsers()">Get getUsers</button>
+<button (click)="getPosts()">Get Posts</button>
+
+<div>
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <label for="id">ID</label><input type="text" formControlName="id"><br />
+        <label for="name">Name</label><input type="text" formControlName="name"><br />
+        <label for="email">Email</label><input type="email" formControlName="email"><br />
+        <label for="gender">Gender</label><input type="radio" name="gender" formControlName="gender" value="male">male
+        <input type="radio" name="gender" formControlName="gender" value="female">female<br />
+        <label for="status">Status</label><input type="radio" name="status" formControlName="status" value="active">Active
+        <input type="radio" name="status" formControlName="status" value="inactive">Inactive<br />
+        <button type="submit" [disabled]="!this.userForm.valid">Submit</button>
+    </form>
+</div>
+
+<div>
+    <h2>Users list</h2>
+    <table>
+        <thead>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Gender</th>
+        <th>Status</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <td>{{user.id}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.gender}}</td>
+                <td>{{user.status}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

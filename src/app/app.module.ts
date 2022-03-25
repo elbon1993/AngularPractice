@@ -12,6 +12,8 @@ import { AppComponent } from './app.component';
 import { UserForm } from 'src/components/reactive-forms-and-dynamic-form/forms.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppHighlightDirective } from 'src/directives/app-highlight.directive';
+import { HttpClientModule } from '@angular/common/http'; 
+import { HttpRestClientComponentComponent } from '../components/http-rest-client-component/http-rest-client-component.component';
 
 @NgModule({
   declarations: [
@@ -23,12 +25,14 @@ import { AppHighlightDirective } from 'src/directives/app-highlight.directive';
     SampleComponent,
     LoginComponent,
     UserForm,
-    AppHighlightDirective
+    AppHighlightDirective,
+    HttpRestClientComponentComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
